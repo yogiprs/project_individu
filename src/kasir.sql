@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Apr 2025 pada 08.52
+-- Waktu pembuatan: 27 Apr 2025 pada 07.59
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `kasir`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `db_brg`
+--
+
+CREATE TABLE `db_brg` (
+  `kd_brg` varchar(50) NOT NULL,
+  `nm_brg` varchar(50) NOT NULL,
+  `jenis` varchar(50) NOT NULL,
+  `hargabeli` varchar(50) NOT NULL,
+  `hargajual` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `db_brg`
+--
+
+INSERT INTO `db_brg` (`kd_brg`, `nm_brg`, `jenis`, `hargabeli`, `hargajual`) VALUES
+('02', 'ciki', 'Makanan', '5000', '7000');
 
 -- --------------------------------------------------------
 
@@ -42,7 +63,7 @@ CREATE TABLE `db_kasir` (
 --
 
 INSERT INTO `db_kasir` (`id_kasir`, `nm_kasir`, `jenis_kelamin`, `no_telpon`, `agama`, `alamat`, `password`) VALUES
-('P01', 'Yogi', 'Laki-Laki', '085175209039', 'Kristen', 'Jakarta Timur', '123456'),
+('P01', 'Yogi', 'Laki-Laki', '085175209039', 'Islam', 'Jakarta Timur', '123456'),
 ('P03', 'Marsel', 'Laki-Laki', '081310134013', 'Islam', 'Depok', '090302');
 
 -- --------------------------------------------------------
@@ -62,6 +83,12 @@ CREATE TABLE `pelanggan` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `db_brg`
+--
+ALTER TABLE `db_brg`
+  ADD PRIMARY KEY (`kd_brg`);
 
 --
 -- Indeks untuk tabel `db_kasir`
